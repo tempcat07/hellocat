@@ -32,5 +32,5 @@ def count_letters(sentence, average=False):
         result=listn
     return result
 
-
+#do not touch
     
