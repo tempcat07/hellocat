@@ -23,12 +23,12 @@ def game_core_tempcat(number):
             Функция принимает загаданное число и возвращает число попыток'''
     
     count = 1      # счетчик попыток
-    predict = 50   # указатель стремящийся к загаданному числу (и станет им)
-    limax = 101    # верхний предел + 1  
-    limin = 0      # нижний предел -1
+    predict = 50   # указатель стремящийся к загаданному числу (и станет равным ему)
+    limax = 101    # верхний предел + 1     (для решения number = 100)
+    limin = 0      # нижний предел -1       (для решения number = 1)
     
     while number != predict:
-        print(number,predict)
+        
         count+=1
         if number > predict:
             limin = predict
@@ -37,7 +37,7 @@ def game_core_tempcat(number):
         elif number < predict:
             limax = predict
             predict -= (limax - limin)/2
-    return(count)   # выход из цикла, если угадали
-                    # Проверяем
+    return(count)   # выход из цикла, когда число найдено 
+
 score_game(game_core_tempcat)
     
